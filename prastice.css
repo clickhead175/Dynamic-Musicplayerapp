@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-image: url("https://cdn.pixabay.com/photo/2016/07/17/19/10/background-1524540_640.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    display: flex;
+    height: 100vh;
+}
+
+.container{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+    width: 400px;
+    height: 600px;
+    background: #000000; 
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
+.wrapper{  
+    padding: 20px;color: whitesmoke;
+}
+
+.wrapper h1 ,h2{
+    margin: 20px;text-decoration: underline;
+}
+
+
+.progressbar{
+    width: 70%;    
+}
+
+
+#pause{
+    display: none;
+}
+
+#play{
+    display: inline;
+}
+
+.music-pause-stop-btn.isplaying #pause{
+    display: inline;
+}
+
+.music-pause-stop-btn.isplaying #play{
+    display: none;
+}
+
+
+.artistimage{
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 300%;
+}
+
+.controlbtn{
+    margin: 20px;
+}
+
+
+.active{
+    animation: rotation 5s linear infinite;
+}
+
+
+
+
+.controlbtn button{
+    padding: 10px;
+    margin: 10px;border: none;
+    border-radius: 400px;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg);
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
