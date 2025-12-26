@@ -8,35 +8,325 @@ body{
     justify-content: center;
     text-align: center;
     align-items: center;
-    background-image: url("https://cdn.pixabay.com/photo/2016/07/17/19/10/background-1524540_640.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background: rgb(23, 23, 44);
     overflow: hidden;
     display: flex;
     height: 100vh;
 }
 
+
 .container{
+    position: relative;
     justify-content: center;
     text-align: center;
     align-items: center;
     color: white;
     width: 400px;
     height: 600px;
-    background: #000000; 
+    background: rgba(243, 243, 243, 0); 
     border: 1px solid black;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;box-shadow: 10px 10px 10px;
+}
+
+/* .container::after{
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: conic-gradient(from var(--angle),blue, red,purple,red,green, yellow);
     border-radius: 10px;
+    backdrop-filter: blur(10px);
+    animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+    to{
+        --angle: 360deg;
+    }
+} */
+
+
+
+.crystal{
+    position: relative;
+    padding: 20px;
+    opacity: 0.4;
+    background: blue;
+    animation: backanimation 41s linear;
+}
+
+.crystal div{
+    position: absolute;
+    opacity: 0.7;
+    transition: all 0.6s linear;
+    animation: backanimation 15s linear infinite;
+}
+
+.crystal div:nth-child(1){
+    bottom: 300px;
+    right: 80px;
+    padding: 20px;
+    background: blue;
+    animation: backanimation 15s linear infinite;
+}
+
+.crystal div:nth-child(2){
+    bottom: 400px;
+    left: 0px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 140px solid red;
+    animation: backanimation 17s linear infinite;
+}
+
+.crystal div:nth-child(3){
+    top: 50px;
+    right: 70px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 100px solid blue;
+    animation: backanimation 20s linear infinite;
+}
+
+.crystal div:nth-child(4){
+    top: 70px;
+    left: 100px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid red;
+    animation: backanimation 9s linear infinite;
+}
+
+.crystal div:nth-child(5){
+    bottom: 120px;
+    right: 100px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 80px solid blue;
+    animation: backanimation 18s linear infinite;
+}
+
+.crystal div:nth-child(6){
+    bottom: 150px;
+    left: 200px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 100px solid red;
+    animation: backanimation 13s linear infinite;
+}
+
+.crystal div:nth-child(8){
+    top: 250px;
+    right: 250px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 30px solid blue;
+    animation: backanimation 14s linear infinite;
+}
+
+.crystal div:nth-child(9){
+    top: 350px;
+    left: 400px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 80px solid red;
+    animation: backanimation 22s linear infinite;
+}
+
+.crystal div:nth-child(10){
+    bottom: 350px;
+    right: 400px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 150px solid blue;
+    animation: backanimation 18s linear infinite;
+}
+
+.crystal div:nth-child(11){
+    bottom: 550px;
+    left: 500px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 200px solid red;
+    animation: backanimation 11s linear infinite;
+}
+
+.crystal div:nth-child(12){
+    top: 450px;
+    right: 100px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 20px solid blue;
+    animation: backanimation 7s linear infinite;
+}
+
+.crystal div:nth-child(13){
+    top: 600px;
+    left: 700px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 100px solid red;
+    animation: backanimation 25s linear infinite;
+}
+
+.crystal div:nth-child(14){
+    top: 400px;
+    left: 500px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 100px solid red;
+    animation: backanimation 25s linear infinite;
+}
+
+.crystal div:nth-child(15){
+    top: 200px;
+    left: 500px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 220px solid blue;
+    animation: backanimation 45s linear infinite;
+}
+
+.crystal div:nth-child(16){
+    bottom: 200px;
+    left: 550px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 100px solid red;
+    animation: backanimation 25s linear infinite;
 }
 
 
-.wrapper{  
+
+
+@keyframes backanimation {
+    0%{
+        transform: rotate(0deg) translate3d(20px, 20px, 50px);
+    }   
+    100%{
+        transform: rotate(360deg) translate3d(60px, 80px, 60px);
+        padding: 50px;
+    }
+}
+
+
+.ball{
+    position: relative;
+    top: 0px;
+    padding: 0px;
+}
+
+.ball div{
+    position: absolute;
+    border-radius: 90px;
+    padding: 10px;
+    margin: 10px;
+    background: aqua;
+    opacity: 0.6;
+    animation: Animations 5.0s linear infinite;
+}
+
+.ball div:nth-child(1){
+    left: 10px;
+    padding: 6px;
+    background: red;
+    animation: Animations 1.8s linear infinite;
+}
+
+.ball div:nth-child(2){
+    right: 50px;
+    padding: 8px;
+    background: green;
+    animation: Animations 2.4s linear infinite;
+}
+
+.ball div:nth-child(3){
+    right: 10px;
+    padding: 4px;
+    background: blue;
+    animation: Animations 2.8s linear infinite;
+}
+
+.ball div:nth-child(4){
+    right: 40px;
+    padding: 5px;
+    background: pink;
+    animation: Animations 3.4s linear infinite;
+}
+
+.ball div:nth-child(5){
+    left: 80px;
+    background: gold;
+    padding: 10px;
+    animation: Animations 4.8s linear infinite;
+}
+.ball div:nth-child(6){
+    left: 60px;
+    background: chartreuse;
+    padding: 12px;
+    animation: Animations 5.8s linear infinite;
+}
+.ball div:nth-child(7){
+    right: 30px;
+    padding: 5px;
+    background: purple;
+    animation: Animations 3.4s linear infinite;
+}
+.ball div:nth-child(8){
+    right: 0px;
+    background: burlywood;
+    padding: 8px;
+    animation: Animations 3.8s linear infinite;
+}.ball div:nth-child(9){
+    left: 20px;
+    padding: 5px;
+    background: fuchsia;
+    animation: Animations 4.2s linear infinite;
+}
+.ball div:nth-child(10){
+    right: 200px;
+    padding: 2px;
+    background: yellow;
+    animation: Animations 4.8s linear infinite;
+}.ball div:nth-child(11){
+    left: 100px;
+    background: silver;
+    padding: 9px;
+    animation: Animations 3.9s linear infinite;
+}.ball div:nth-child(12){
+    right: 150px;
+    padding: 7px;
+    background: springgreen;
+    animation: Animations 4s linear infinite;
+}
+
+
+@keyframes Animations {
+    0%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(500px);
+    }
+}
+
+.wrapper{
     padding: 20px;color: whitesmoke;
 }
 
-.wrapper h1 ,h2{
+.wrapper h1 {
+    color: black;
+    text-shadow: 10px 10px 10px purple;
     margin: 20px;text-decoration: underline;
+}
+
+.wrapper h2{
+    margin: 20px;
+    text-shadow: 10px 10px 10px;
 }
 
 
@@ -77,9 +367,6 @@ body{
 .active{
     animation: rotation 5s linear infinite;
 }
-
-
-
 
 .controlbtn button{
     padding: 10px;

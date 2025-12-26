@@ -8,11 +8,11 @@ const pausebtn = document.querySelector('#pausebtn');
 const stopbtn = document.querySelector('#playbtn');
 const artistimage = document.querySelector('.artistimage')
 const repeatbtn = document.querySelector('.repeatbtn')
-const pause = document.querySelector('#pause');
-const play = document.querySelector('#play')
 const progressbar = document.querySelector('.progressbar')
 const volumecontrol = document.querySelector('.volumecontrol')
 const container = document.querySelector('.container')
+const downloadbtn = document.querySelector('.downloadbtn')
+
 
 
 const audioplayer = new Audio()
@@ -22,103 +22,149 @@ audioplayer.loop = false;
 
 const musicdata = [
     {
-        Musictitle: "Into_You_Remix_feat_Mac_Miller_KLICKAUD",
+        Musictitle: "Into_You_Remix_feat_Mac",
         artistname: "Ariana Grande",
         src: "./musiclist/Into_You_Remix_feat_Mac_Miller_KLICKAUD.mp3",
-        image: "https://media.gettyimages.com/id/1202825234/photo/los-angeles-ca-ariana-grande-attends-the-62nd-annual-grammy-awards-at-staples-center-on.jpg?s=612x612&w=0&k=20&c=01ZbU2-PVqQKGtFvokLyQNOL8x476tbPO8mQLBkXNEs=",
-        background: "red"
+        image: "./imag/artworks-000175111365-72tcok-original.jpg",
+        background: "",
+        boxshadow: "black",
     },
     {
-        Musictitle: "Alan_Walker_Ava_Max_-_Alone_Part_2_Alone_pt_II_Slowking_Remix_KLICKAUD",
-        artistname: "this",
+        Musictitle: "Ava_Max-Alone_Part_2_Alone",
+        artistname: "Alan Walker",
         src: './musiclist/Alan_Walker_Ava_Max_-_Alone_Part_2_Alone_pt_II_Slowking_Remix_KLICKAUD.mp3',
-        image: "https://media.gettyimages.com/id/1136579315/photo/berlin-germany-british-norwegian-dj-alan-walker-performs-live-on-stage-during-a-concert-at.jpg?s=612x612&w=0&k=20&c=BcJlIsyzXewmtCvEzlWGEXo2TTl_RgwhgKUQPb0x3w8=",
-        background: "blue"
+        image: "./imag/artworks-000659209222-2f4m73-original.jpg",
+        background: "rgba(3, 233, 34, 0.502)",
+        boxshadow: "",
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
+        Musictitle: "Dreams Pt. II",
+        artistname: "NCS",
         src: './musiclist/Dreams.mp3',
-        image: "https://media.gettyimages.com/id/946009982/photo/indio-ca-dj-alan-walker-performs-onstage-during-the-2018-coachella-valley-music-and-arts.jpg?s=612x612&w=0&k=20&c=NQ393FdSZKRKpVSsY_xLl8rD5QrYfE1DmPkWj9g3nYg=",
-        background: "black" 
+        image: "./imag/artworks-000463431084-s9wr2o-original.jpg",
+        background: "rgba(233, 179, 3, 0.582)",
+        boxshadow: "", 
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
+        Musictitle: "Taylor Swift - Blank Space",
+        artistname: "Taylor Swift",
         src: './musiclist/Blank_Space-_taylor_swift_KLICKAUD(1).mp3',
-        image: "https://soundcloud.com/arianagrandeforrealidkwhyicantgetmyownlinkbutok",
-        background: "green" 
+        image: "./imag/artworks-000123962072-i1avwd-original.jpg",
+        background: "brown",
+        boxshadow: "",
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
+        Musictitle: "Jo Cohen & Sex Whales",
+        artistname: "NCS",
         src: './musiclist/Jo_Cohen_Sex_Whales_-_We_Are_KLICKAUD.mp3',
-        image: "https://soundcloud.com/arianagrandeforrealidkwhyicantgetmyownlinkbutok",
-        background: '' 
+        image: "./imag/artworks-000159271573-4wj57m-original.jpg",
+        background: 'rgba(191, 211, 214, 0.534)',
+        boxshadow: "",
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
+        Musictitle: "Unity",
+        artistname: "Alan Walker",
         src: './musiclist/Unity-AlanWalker_KLICKAUD.mp3',
-        image: "https://media.gettyimages.com/id/1136579315/photo/berlin-germany-british-norwegian-dj-alan-walker-performs-live-on-stage-during-a-concert-at.jpg?s=612x612&w=0&k=20&c=BcJlIsyzXewmtCvEzlWGEXo2TTl_RgwhgKUQPb0x3w8=",
-        background: '' 
+        image: "./imag/artworks-000570323315-t9uppp-original.jpg",
+        background: 'rgba(0, 213, 241, 0.508)',
+        boxshadow: "",
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
+        Musictitle: "The Spectre - Remix",
+        artistname: "Alan Walker",
         src: './musiclist/The_Spectre_KLICKAUD.mp3',
-        image: "https://media.gettyimages.com/id/1136579315/photo/berlin-germany-british-norwegian-dj-alan-walker-performs-live-on-stage-during-a-concert-at.jpg?s=612x612&w=0&k=20&c=BcJlIsyzXewmtCvEzlWGEXo2TTl_RgwhgKUQPb0x3w8=",
-        background: '' 
+        image: "./imag/artworks-000598849718-1830g1-original.jpg",
+        background: 'rgba(191, 211, 214, 0.021)',
+        boxshadow: "",
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
-        src: './musiclist/Love_me_like_you_do_KLICKAUD.mp3',
-        image: "https://soundcloud.com/arianagrandeforrealidkwhyicantgetmyownlinkbutok",
-        background: '' 
+        Musictitle: "ANDROMEDA - MONTAGEM COMA",
+        artistname: "Elysian. and Chemistry AI",
+        src: './musiclist/ANDROMEDA_-_MONTAGEM_COMA_KLICKAUD.mp3',
+        image: "./imag/artworks-bSrjSQc1XVr8sDav-HXEvdw-large.jpg",
+        background: 'rgba(241, 0, 0, 0.486)',
+        boxshadow: "",
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
-        src: './musiclist/Dreams.mp3',
-        image: "https://soundcloud.com/arianagrandeforrealidkwhyicantgetmyownlinkbutok",
-        background: '' 
+        Musictitle: "SEMPERO (Slowed)",
+        artistname: "QMIIR",
+        src: './musiclist/SEMPERO_Slowed_KLICKAUD.mp3',
+        image: "./imag/artworks-Lt5H5YpkqJxV-0-original.jpg",
+        background: 'rgba(172, 169, 3, 0.486)',
+        boxshadow: "",
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
-        src: './musiclist/Dreams.mp3',
-        image: "https://soundcloud.com/arianagrandeforrealidkwhyicantgetmyownlinkbutok",
-        background: '' 
+        Musictitle: "The Games We Play",
+        artistname: "Vaeros - Freeway",
+        src: './musiclist/Vaeros_-_Freeway_KLICKAUD.mp3',
+        image: "./imag/artworks-000623489938-ihkbc9-original.jpg",
+        background: 'rgba(241, 0, 0, 0.075)',
+        boxshadow: "",
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
-        src: './musiclist/Dreams.mp3',
-        image: "https://soundcloud.com/arianagrandeforrealidkwhyicantgetmyownlinkbutok",
-        background: '' 
+        Musictitle: "LUNA BALA - Slowed",
+        artistname: "Emirhan Turhan",
+        src: './musiclist/LUNA_BALA_-_Slowed_KLICKAUD.mp3',
+        image: "./imag/artworks-yyzIGFcjXx17Xisk-TMXwsQ-large.jpg",
+        background: 'rgba(241, 145, 0, 0.568)',
+        boxshadow: "",
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
-        src: './musiclist/Dreams.mp3',
-        image: "https://soundcloud.com/arianagrandeforrealidkwhyicantgetmyownlinkbutok",
-        background: '' 
+        Musictitle: "Scythermane & SEKIMANE",
+        artistname: "Elysian. and Chemistry AI",
+        src: "./musiclist/Scythermane_SEKIMANE_-_TE_VEO_POR_AHÌ_KLICKAUD.mp3",
+        image: "./imag/artworks-Rt0kv1EdNBGMxKKv-bmu3JQ-large.jpg",
+        background: "rgba(3, 38, 233, 0.502)",
+        boxshadow: "",
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
-        src: './musiclist/Dreams.mp3',
-        image: "https://soundcloud.com/arianagrandeforrealidkwhyicantgetmyownlinkbutok",
-        background: '' 
+        Musictitle: "GO BABY",
+        artistname: "Justin Bieber",
+        src: "./musiclist/Justin_BieBer_-_Baby_ft_Ludacris_ReMiX_Dj_AruN_KLICKAUD.mp3",
+        image: "./imag/artworks-oW1IeMqYpcnp-0-original.jpg",
+        background: "rgba(243, 243, 243, 0.525)",
+        boxshadow: "",
     },
     {
-        Musictitle: "this is h",
-        artistname: "this",
-        src: './musiclist/Dreams.mp3',
-        image: "https://soundcloud.com/arianagrandeforrealidkwhyicantgetmyownlinkbutok",
-        background: '' 
+        Musictitle: "Beauty And A Beat",
+        artistname: "Justin Bieber",
+        src: "./musiclist/Justin_Bieber_-_Beauty_And_A_Beat_feat_Nicki_Minaj_KLICKAUD.mp3",
+        image: "./imag/artworks-I7kWwK9EEnzsKmtz-MCzFsQ-original.jpg",
+        background: "rgba(119, 134, 34, 0.219)",
+        boxshadow: "",
     },
+    {
+        Musictitle: "Love me like you do",
+        artistname: "Ellie Goulding",
+        src: "./musiclist/Love_me_like_you_do_KLICKAUD.mp3",
+        image: "./imag/artworks-000125141318-bwjjvx-original.jpg",
+        background: "rgba(87, 26, 74, 0.86)",
+        boxshadow: "",
+    },
+     {
+        Musictitle: "Rautu - close your eyes",
+        artistname: "Rautu - music",
+        src: "./musiclist/Rautu_-_close_your_eyes_KLICKAUD.mp3",
+        image: "./imag/rautu-close.jpg",
+        background: "rgba(87, 26, 74, 0.86)",
+        boxshadow: "",
+    },
+     {
+        Musictitle: "Julian Winding - The Demon Dance",
+        artistname: "Julian Winding",
+        src: "./musiclist/03_-_Julian_Winding_-_The_Demon_Dance_THE_NEON_DEMON_Red_Band_TrailerNightClub_Scene_Mix_KLICKAUD.mp3",
+        image: "./imag/neondemon.jpg",
+        background: "rgba(87, 26, 74, 0.86)",
+        boxshadow: "",
+    },
+     {
+        Musictitle: "GigaChad Theme Phonk House Version",
+        artistname: "g3ox_em",
+        src: "./musiclist/GigaChad_Theme_Phonk_House_Version_KLICKAUD.mp3",
+        image: "./imag/gigachad.jpg",
+        background: "rgba(87, 26, 74, 0.86)",
+        boxshadow: "",
+    }
 ]
 
 
@@ -130,11 +176,12 @@ musiccontrol.addEventListener('click',()=> {
 function repeatmusic(){
     audioplayer.loop = !audioplayer.loop;
     if(audioplayer.loop){
-        repeatbtn.textContent = "Toggle Loop On (Looping)"
+        repeatbtn.innerHTML = `<i class="bi bi-repeat-1"></i>`
     }
     else{
-        repeatbtn.innerHTML = `<i class="fa-solid fa-repeat-1"></i>`
+        repeatbtn.innerHTML = `<i class="bi bi-repeat"></i>`
     }
+    backgroundchange()
 }
 
 
@@ -152,28 +199,16 @@ function features(trackindex){
     }
     audioplayer.src = tracks.src
     artistimage.src = tracks.image
-    // progressbar.value = audioplayer.duration
-    // audioplayer.volume
     artistnamedis.textContent = tracks.artistname;
     musictitle.textContent = tracks.Musictitle;
-    // audioplayer.play()
-//     if(musicplayer === true){
-//         audioplayer.play()
-//     }
-//     else if(musicplayer === false){
-//         audioplayer.pause()
-//     }
-//     else{
-//         audioplayer
-//     }
-// }
 }
 
 function backgroundchange(){
     container.style.background = musicdata[currentindextrack].background.toString();
+    container.style.image = musicdata[currentindextrack].boxshadow.toString()
 }
 
-console.log(backgroundchange())
+
 
 
 function playpausemusic(){
@@ -199,6 +234,7 @@ function prevfun(){
     }
     features(currentindextrack)
     playpausemusic()
+    backgroundchange()
 }
 
 function stopfun(){
@@ -214,20 +250,54 @@ function nextfun(){
     }
     features(currentindextrack)
     musicplayer = false
+    backgroundchange()
     playpausemusic()
 }   
 
 features(currentindextrack)
 
 
+function repeatfun(){
+    if(repeatbtn){
+        audioplayer.loop = true;
+    }
+    else{
+        audioplayer.loop = false;
+    }
+}
+
+
+function download(){
+    const downloadfile = musicdata[currentindextrack]
+    const link = document.createElement('a')
+    link.href = downloadfile.src
+    link.download = downloadfile.Musictitle + ".mp3"
+
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
+}
+
 
 nextbtn.addEventListener('click', ()=> nextfun())
 previousbtn.addEventListener('click',()=> prevfun());
 musiccontrol.addEventListener('click', ()=> playpausemusic())
 audioplayer.addEventListener('ended', ()=> nextfun())
-audioplayer.addEventListener('loadedmetadata', ()=> {
+repeatbtn.addEventListener('click', ()=> repeatfun())
+downloadbtn.addEventListener('click',()=> download())
+
+audioplayer.addEventListener('loademetadata',()=> {
     progressbar.max = audioplayer.duration;
     progressbar.value = 0
+})
+
+
+audioplayer.addEventListener('timeupdate',()=> {
+    progressbar.value = audioplayer.currentTime;
+})
+
+progressbar.addEventListener('input', (e)=> {
+    audioplayer.currentTime = e.target.value;
     // const {currentTime, duration} = audioplayer
     // progressbar.value = (currentTime / duration) * 100
 })
