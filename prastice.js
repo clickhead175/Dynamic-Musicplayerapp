@@ -301,7 +301,6 @@ progressbar.addEventListener('input', (e)=> {
     // const {currentTime, duration} = audioplayer
     // progressbar.value = (currentTime / duration) * 100
 })
-
 // progressbar.addEventListener('input', (e) => {
 //     const seekTime = (e.target.value / 100) * audioplayer.duration
 //     audioplayer.currentTime = seekTime
