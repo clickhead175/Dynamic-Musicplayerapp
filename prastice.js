@@ -13,7 +13,6 @@ const volumecontrol = document.querySelector('.volumecontrol')
 const container = document.querySelector('.container')
 const downloadbtn = document.querySelector('.downloadbtn')
 
-
 const audioplayer = new Audio()
 const array = []
 let musicplayer = false;
