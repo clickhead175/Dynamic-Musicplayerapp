@@ -275,8 +275,6 @@ function download(){
     link.click()
     link.remove()
 }
-
-
 nextbtn.addEventListener('click', ()=> nextfun())
 previousbtn.addEventListener('click',()=> prevfun());
 musiccontrol.addEventListener('click', ()=> playpausemusic())
