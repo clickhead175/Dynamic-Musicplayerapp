@@ -288,8 +288,6 @@ audioplayer.addEventListener('loademetadata',()=> {
     progressbar.max = audioplayer.duration;
     progressbar.value = 0
 })
-
-
 audioplayer.addEventListener('timeupdate',()=> {
     progressbar.value = audioplayer.currentTime;
 })
